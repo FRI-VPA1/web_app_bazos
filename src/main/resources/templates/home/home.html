@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <style>
+        body {
+            padding-top: 54px;
+        }
+
+        @media (min-width: 992px) {
+            body {
+                padding-top: 56px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<br>
+<br>
+<br>
+<div class="container">
+    <form action="#" th:action="@{/home}"  th:object="${selectForm}" method="post">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="selected_modell">Typ</label>
+                    <select class="form-control" id="selected_modell">
+                        <option value="iPhone">iPhone</option>
+                        <option value="iPad" disabled>iPad</option>
+                        <option value="iWatch" disabled>iWatch</option>
+                        <option value="iMac" disabled>iMac</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="selected_model">Model</label>
+                    <select class="form-control" id="selected_model" th:field="*{selected_model}">
+                        <option th:each="model : ${models}"
+                                th:value="${model}"
+                                th:utext="${model}"
+                                th:name="${model}"/>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="selected_capacity">Kapacita (GB)</label>
+                    <select class="form-control" id="selected_capacity" th:field="*{selected_capacity}">
+                        <option value="NEZÁLEŽÍ">NEZÁLEŽÍ</option>
+                        <option th:each="cap : ${capacity}"
+                                th:value="${cap}"
+                                th:utext="${cap}"
+                                th:name="${cap}"/>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="selected_colour">Farba</label>
+                    <select class="form-control" id="selected_colour" th:field="*{selected_colour}">
+                        <option value="NEZÁLEŽÍ">NEZÁLEŽÍ</option>
+                        <option th:each="col : ${colour}"
+                                th:value="${col}"
+                                th:utext="${col}"
+                                th:name="${col}"/>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-success btn-block">ANALYZUJ</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
