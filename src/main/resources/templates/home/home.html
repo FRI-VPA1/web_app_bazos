@@ -66,7 +66,7 @@
                 <div class="form-group">
                     <label for="selected_capacity">Kapacita (GB)</label>
                     <select class="form-control" id="selected_capacity" th:field="*{selected_capacity}">
-                        <option value="NEZÁLEŽÍ">NEZÁLEŽÍ</option>
+                        <option value="none">NEZÁLEŽÍ</option>
                         <option th:each="cap : ${capacity}"
                                 th:value="${cap}"
                                 th:utext="${cap}"
@@ -78,7 +78,7 @@
                 <div class="form-group">
                     <label for="selected_colour">Farba</label>
                     <select class="form-control" id="selected_colour" th:field="*{selected_colour}">
-                        <option value="NEZÁLEŽÍ">NEZÁLEŽÍ</option>
+                        <option value="none">NEZÁLEŽÍ</option>
                         <option th:each="col : ${colour}"
                                 th:value="${col}"
                                 th:utext="${col}"

@@ -83,12 +83,12 @@ public class DBHandler {
             String QUERY = "+iphone ";
             QUERY += "+" + selectForm.getSelected_model();
 
-            if (!selectForm.getSelected_capacity().equals("NEZÁLEŽÍ"))
+            if (!selectForm.getSelected_capacity().equals("none"))
             {
                 QUERY += " +" + selectForm.getSelected_capacity() + "*";
             }
 
-            if (!selectForm.getSelected_colour().equals("NEZÁLEŽÍ"))
+            if (!selectForm.getSelected_colour().equals("none"))
             {
                 QUERY += " +" + selectForm.getSelected_colour();
             }
