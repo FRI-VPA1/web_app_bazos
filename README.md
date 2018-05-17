@@ -24,7 +24,7 @@
 
     SET storage_engine=MYISAM;
     ALTER TABLE table_name ENGINE = MyISAM;
-
+> **TIP:** pre vytvorenie databázy je možné využiť priložený súbor **java_bazos.sql**, ktorý obsahuje už aj načítané dáta
 ## application.properties
 
 **application.properties** je súbor, pomocou ktorého môžete nastavovať vlastnosti vašej aplikácie. Pred spustením **BWA** je nutné vytvoriť si vlastnú MySQL databázu a nakonfigurovať prístupové do danej databázy v konfiguračnom súbore **application.properties.**
