@@ -10,6 +10,7 @@ import javax.annotation.PostConstruct;
 @ConfigurationProperties("init")
 public class InitService {
     private boolean populateDB;
+    private int pages;
 
     @Autowired
     private DataHandler dataHandler;
@@ -18,11 +19,19 @@ public class InitService {
     public void init() {
         if (isPopulateDB()) {
             try {
-                dataHandler.getWebContent(15);
+                dataHandler.getWebContent(getPages());
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 
     public boolean isPopulateDB() {
