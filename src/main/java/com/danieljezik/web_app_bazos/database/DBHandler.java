@@ -7,6 +7,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -16,10 +17,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @Repository
+@ConfigurationProperties("dbhandler")
 public class DBHandler {
 
     public static final Logger log = LoggerFactory.getLogger(DBHandler.class.getName());
 
+    private String[] filter;
     private Connection dbConnection;
     private DBConnectionConfig dbConfig;
 
@@ -90,6 +93,11 @@ public class DBHandler {
                 QUERY += " +" + selectForm.getSelected_colour();
             }
 
+            for (int i = 0; i < filter.length; i++)
+            {
+                QUERY += " -" + filter[i];
+                i++;
+            }
 
             PreparedStatement preparedStatement = dbConnection.prepareStatement(getQueryStatement);
             preparedStatement.setString(1, QUERY);
@@ -114,5 +122,13 @@ public class DBHandler {
         }
         return arrayListOfItems;
 
+    }
+
+    public String[] getFilter() {
+        return filter;
+    }
+
+    public void setFilter(String[] filter) {
+        this.filter = filter;
     }
 }
