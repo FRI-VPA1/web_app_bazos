@@ -40,5 +40,30 @@
     items.select.capacity=8,16,32,64,128,256
     items.select.colour=Silver,Space gray,Rose Gold,Jet Black,Gold
 
->**#DATABASE** v tejto kategórií nahraďte existujúce údaje vašimi údajmi o databáze
->**#PROPORTIES FOR IPHONES** obsahuje dostupné modely, kapacity a farby Apple produktov
+    #INIT  
+    init.populateDB=false  
+    init.pages=15  
+      
+    #DBHANDLER  
+    dbhandler.filter=displej,vymenim,kryt,púzdro,display,puzdro,zakladna,doska,pokazeny,rozbity,nefunkcny,prasknuty,blokovany,zablokovany,sklo,bateru,tvrdene,ochranne,bateria,krabica,krabice,kabel,kable,
+
+ - **#DATABASE** v tejto kategórií nahraďte existujúce údaje vašimi údajmi o databáze
+ - **#PROPORTIES FOR IPHONES** obsahuje dostupné modely, kapacity a farby Apple produktov
+ - **#DBHANDLER** filter je pole filtrovaných slov, ktoré vyhľadávač využíva na filtrovanie inzerátov
+
+## #INIT
+
+>Prvé spustenie aplikácie:
+
+ 
+
+- je nutné spustiť s hodnotou `init.populateDB=true`
+- nastavenie počtu strán inzerátov, ktoré sa majú načítať do databázy `init.pages={počet strán}` 
+
+    
+ >Opakované spustenie aplikácie:
+
+ 
+
+- je nutné spustiť s hodnotou `init.populateDB=false`
+- `init.pages={počet strán}` už meniť nemusíme, tento údaj sa už viac nepoužíva
