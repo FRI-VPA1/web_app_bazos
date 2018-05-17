@@ -19,6 +19,7 @@ public class DataMiner {
      *
      * @param url URL adresa, z ktorej HTML kód chceme
      * @return požadovaný HTML kód
+     * @throws IOException IOException
     */
 
     public String getHtmlContent(String url) throws Exception, IOException {

@@ -53,7 +53,7 @@ public class DBConnectionConfig {
      * Metóda pre získanie Connection
      *
      * @return Connection
-     * @throws SQLException
+     * @throws SQLException SQLException
      */
     @Bean
     public Connection getDbConnection() throws SQLException {

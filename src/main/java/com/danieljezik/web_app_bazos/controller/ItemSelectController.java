@@ -23,9 +23,9 @@ public class ItemSelectController {
 
     /**
      * Route - ktorý má namapovanú default adresu teda napr. http://localhost:8080/
-     * Pri požiadavke GET na daný route vráti View -> home.html s danými atribútmi
+     * Pri požiadavke GET na daný route vráti View  home.html s danými atribútmi
      * @param model model viewu obsahujúci atribúty
-     * @return  vracia požadovaný View -> home.html
+     * @return  vracia požadovaný View / home.html
      */
     @RequestMapping("")
     public String index(Model model){

@@ -34,7 +34,7 @@ public class HomeController {
 
     /**
      * Route - ktorý je namapovaný na http://localhost:8080/home
-     * Pri POST - REQUESTE vracia view, ktorý obsahuje data na zaklade selectov z view -> home.html
+     * Pri POST - REQUESTE vracia view, ktorý obsahuje data na zaklade selectov z view / home.html
      * Databáza vracia požadované dáta a tie sa vo viewe zobrazujú vo forme grafu a okien
      *
      * @param selectForm select form z predošlého viewu ( s užívateľským výberom )

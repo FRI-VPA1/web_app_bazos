@@ -71,7 +71,7 @@ public class DBHandler {
     /**
      * Metóda pre získavanie všetkých Item podľa zadaných selektov zo SelectFormu
      *
-     * @param selectForm
+     * @param selectForm SelectForm
      * @return Arraylist vyhovujúcich Itemov
      */
     public ArrayList<Item> getDataFromDB(SelectForm selectForm) {
